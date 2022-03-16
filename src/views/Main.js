@@ -9,7 +9,6 @@ export default function Main() {
   const [countries, setCountries] = useState([]);
   const [continent, setContinent] = useState('All');
   const [loading, setLoading] = useState(true);
-  // const [continents, setContinents] = useState([]);
   const options = ['All', 'Europe', 'North America', 'South America', 'Asia', 'Africa', 'Oceania', 'Antarctica'];
 
   useEffect(() => {
@@ -26,13 +25,11 @@ export default function Main() {
     fetchData();
   }, []);
 
-  // get continents, send to dropdown component
-  // loop through countries, if continent is not already in continents, then add it; add "all"
   const filterCountries = () => {
     return countries.filter((country) => country.continent === continent || continent === 'All');
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <span className="loader">Load&nbsp;ng</span>;
 
   return (
     <main >
@@ -41,7 +38,6 @@ export default function Main() {
         {filterCountries().map((country) => (
           <CountryCard key={country.id} {...country} />
         ))}
-
       </div>
     </main>
   );
