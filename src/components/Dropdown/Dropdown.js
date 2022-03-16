@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Dropdown({ options, callback }) {
-  // console.log('options', options);
   return (
     <div>
       <select data-testid='select' className='dropdown' onChange={(e) => callback(e.target.value)}>
