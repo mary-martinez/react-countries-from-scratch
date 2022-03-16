@@ -4,12 +4,13 @@ import CountryCard from '../components/CountryCard/CountryCard';
 import './Main.css';
 import Dropdown from '../components/Dropdown/Dropdown';
 
+
 export default function Main() {
   const [countries, setCountries] = useState([]);
   const [continent, setContinent] = useState('All');
   const [loading, setLoading] = useState(true);
   // const [continents, setContinents] = useState([]);
-  const options = ['All', 'Europe', 'North America', 'South America', 'Asia', 'Africa', 'Oceana', 'Antarctica'];
+  const options = ['All', 'Europe', 'North America', 'South America', 'Asia', 'Africa', 'Oceania', 'Antarctica'];
 
   useEffect(() => {
 
@@ -17,7 +18,7 @@ export default function Main() {
       try {
         const resp = await fetchCountries();
         setCountries(resp);
-        setLoading('false');
+        setLoading(false);
       } catch (e) {
         setErrorMessage('We are experiencing technical difficulties. Please try reloading the page.');
       }
@@ -34,11 +35,14 @@ export default function Main() {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <main>
+    <main >
       <Dropdown options={options} callback={setContinent} />
-      {filterCountries().map((country) => (
-        <CountryCard key={country.id} {...country} />
-      ))}
+      <div className='contain-country-cards'>
+        {filterCountries().map((country) => (
+          <CountryCard key={country.id} {...country} />
+        ))}
+
+      </div>
     </main>
   );
 }
