@@ -1,4 +1,4 @@
-import React, { useEffect, useState, setErrorMessage } from 'react';
+import React, { useEffect, useState } from 'react';
 import { fetchCountries } from '../services/countries';
 import CountryCard from '../components/CountryCard/CountryCard';
 import './Main.css';
