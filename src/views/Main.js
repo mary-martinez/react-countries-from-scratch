@@ -9,6 +9,7 @@ export default function Main() {
   const [countries, setCountries] = useState([]);
   const [continent, setContinent] = useState('All');
   const [loading, setLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState('');
   const options = ['All', 'Europe', 'North America', 'South America', 'Asia', 'Africa', 'Oceania', 'Antarctica'];
 
   useEffect(() => {
@@ -33,6 +34,7 @@ export default function Main() {
 
   return (
     <main >
+      <p>{errorMessage}</p>
       <Dropdown options={options} callback={setContinent} />
       <div className='contain-country-cards'>
         {filterCountries().map((country) => (
