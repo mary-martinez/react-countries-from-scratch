@@ -1,25 +1,31 @@
-# Alchemy React Base Template
+# Countries From Scratch Deliverable Plan
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Components
 
-Use this template for all your "from scratch" deliverables. To start, simply run
+Main -- with countries / continent state
+CountryCard -- will take in country info as props and display
+Dropdown - will take list of continents, and continent state, setter as props
 
-- `npm install`
-- `npm start`
+### To Dos
 
-## Available Scripts
+1. Get all the countries showing up with no dropdown
 
-In the project directory, you can run:
+- Setup your Main component with countries state
+- Get the supabase call working - don't worry about displaying - validate with console.log
+- Create your CountryCard component with hard coded data
+  `<CountryCard name="Scotland" continent="Europe" iso3="BES" />`
+- Map through your countries state and display all the countries
 
-### `npm start`
+2. Build the dropdown (don't worry about filtering at this point) -- make sure that when you change the dropdown, the state in Main.js gets updated -- use React dev tools to validate this step
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. Instead of displaying the countries -- display the FILTERED COUNTRIES
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+4. Add your loading state
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+country object 
+continent: "Europe"
+id: 15
+iso2: "AD"
+iso3: "AND"
+local_name: "Andorra"
+name: "Andorra"
